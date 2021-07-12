@@ -29,7 +29,7 @@
 cusy.cms
 ========
 
-Extensions and patches for collective.cms
+The main policy package to install the Cusy CMS.
 
 
 Features
