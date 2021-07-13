@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<object meta_type="Dexterity FTI" name="Link">
+
+  <!-- Allow discussion -->
+  <property name="allow_discussion">True</property>
+
+  <!-- Enabled behaviors -->
+  <property name="behaviors" purge="false">
+    <element value="collective.behavior.banner" />
+    <element value="plone.leadimage" />
+  </property>
+
+  <!-- View information -->
+  <property name="default_view_fallback">True</property>
+</object>

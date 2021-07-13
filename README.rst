@@ -40,6 +40,10 @@ Dependencies
 
 ``cusy.cms`` depends on and installs the following add-ons:
 
+- `collective.behavior.banner <https://github.com/collective/collective.behavior.banner>`_:
+  Add banners and create slider/carousel from banners.
+- `collective.easyform <https://github.com/collective/collective.easyform>`_:
+  Form Builder for Plone.
 - `cusy.exportimport <https://github.com/cusyio/cusy.exportimport>`_:
   Extensions and patches for collective.exportimport.
 - `cusy.restapi.easyform <https://github.com/cusyio/cusy.restapi.easyform>`_:
@@ -48,6 +52,8 @@ Dependencies
   Site and content info for plone.restapi.
 - `cusy.restapi.patches <https://github.com/cusyio/cusy.restapi.patches>`_:
   Patches and fixes for plone.restapi which are not yet released.
+- `plone.restapi <https://github.com/plone/plone.restapi>`_:
+  RESTful hypermedia API for Plone.
 
 
 

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<object meta_type="Dexterity FTI" name="Folder">
+
+  <!-- Allow discussion -->
+  <property name="allow_discussion">True</property>
+
+  <!-- Enabled behaviors -->
+  <property name="behaviors" purge="false">
+    <element value="collective.behavior.banner" />
+    <element value="plone.leadimage" />
+    <element value="plone.richtext" />
+  </property>
+
+  <!-- View information -->
+  <property name="default_view_fallback">True</property>
+  <property name="default_view">summary_view</property>
+</object>
