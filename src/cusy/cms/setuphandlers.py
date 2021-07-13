@@ -14,6 +14,7 @@ class HiddenProfiles(object):
     def getNonInstallableProducts(self):
         """Hide other products from site-creation and quickinstaller."""
         return [
+            "collective.behavior.banner",
             "collective.easyform",
             "cusy.exportimport",
             "cusy.restapi.easyform",

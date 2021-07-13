@@ -6,6 +6,7 @@
 
   <i18n:registerTranslations directory="locales" />
 
+  <include package="collective.behavior.banner" />
   <include package="collective.easyform" />
   <include package="cusy.exportimport" />
   <include package="cusy.restapi.easyform" />

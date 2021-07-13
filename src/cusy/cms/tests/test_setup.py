@@ -38,6 +38,12 @@ class TestSetup(unittest.TestCase):
 
         self.assertIn(ICusyCmsLayer, utils.registered_layers())
 
+    def test_collective_behaviort_banner_installed(self):
+        """Validate that `collective.behavior.banner` is installed."""
+        self.assertTrue(
+            self.installer.isProductInstalled("collective.behavior.banner"),
+        )
+
     def test_collective_easyform_installed(self):
         """Validate that `collective.easyform` is installed."""
         self.assertTrue(self.installer.isProductInstalled("collective.easyform"))
