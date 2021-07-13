@@ -2,9 +2,11 @@
 <metadata>
   <version>1000</version>
   <dependencies>
+    <dependency>profile-collective.easyform:default</dependency>
     <dependency>profile-cusy.exportimport:default</dependency>
     <dependency>profile-cusy.restapi.easyform:default</dependency>
     <dependency>profile-cusy.restapi.info:default</dependency>
     <dependency>profile-cusy.restapi.patches:default</dependency>
+    <dependency>profile-plone.restapi:default</dependency>
   </dependencies>
 </metadata>

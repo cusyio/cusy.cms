@@ -38,6 +38,10 @@ class TestSetup(unittest.TestCase):
 
         self.assertIn(ICusyCmsLayer, utils.registered_layers())
 
+    def test_collective_easyform_installed(self):
+        """Validate that `collective.easyform` is installed."""
+        self.assertTrue(self.installer.isProductInstalled("collective.easyform"))
+
     def test_cusy_exportimport_installed(self):
         """Validate that `cusy.exportimport` is installed."""
         self.assertTrue(self.installer.isProductInstalled("cusy.exportimport"))
@@ -51,8 +55,12 @@ class TestSetup(unittest.TestCase):
         self.assertTrue(self.installer.isProductInstalled("cusy.restapi.info"))
 
     def test_cusy_restapi_patches_installed(self):
-        """Validate that `cusy.restapi.patches` is installed."""
+        """Validate that `cusy.restapi` is installed."""
         self.assertTrue(self.installer.isProductInstalled("cusy.restapi.patches"))
+
+    def test_plone_restapi_installed(self):
+        """Validate that `plone.restapi` is installed."""
+        self.assertTrue(self.installer.isProductInstalled("plone.restapi"))
 
 
 class TestUninstall(unittest.TestCase):
