@@ -11,4 +11,16 @@
       directory="static"
       />
 
+  <!-- Adjust permission to only show the subsite switcher for editors.
+  
+  This might be a custom permission at some point.
+   -->
+  <browser:viewlet
+      class="collective.lineage.browser.LineageSwitcherViewlet"
+      layer="cusy.cms.interfaces.ICusyCmsLayer"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      name="collective.lineage.switcher"
+      permission="cmf.ModifyPortalContent"
+      />
+
 </configure>
