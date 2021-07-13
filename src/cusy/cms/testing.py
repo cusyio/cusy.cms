@@ -27,24 +27,24 @@ class CusyCmsLayer(PloneSandboxLayer):
         applyProfile(portal, "cusy.cms:default")
 
 
-CUSY_CMS_FIXTURE = CusyCmsLayer()
+FIXTURE = CusyCmsLayer()
 
 
-CUSY_CMS_INTEGRATION_TESTING = IntegrationTesting(
-    bases=(CUSY_CMS_FIXTURE,),
+INTEGRATION_TESTING = IntegrationTesting(
+    bases=(FIXTURE,),
     name="CusyCmsLayer:IntegrationTesting",
 )
 
 
-CUSY_CMS_FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(CUSY_CMS_FIXTURE,),
+FUNCTIONAL_TESTING = FunctionalTesting(
+    bases=(FIXTURE,),
     name="CusyCmsLayer:FunctionalTesting",
 )
 
 
-CUSY_CMS_ACCEPTANCE_TESTING = FunctionalTesting(
+ACCEPTANCE_TESTING = FunctionalTesting(
     bases=(
-        CUSY_CMS_FIXTURE,
+        FIXTURE,
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         z2.ZSERVER_FIXTURE,
     ),

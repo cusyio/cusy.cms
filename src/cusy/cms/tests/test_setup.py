@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
-from cusy.cms.testing import CUSY_CMS_INTEGRATION_TESTING  # noqa: E501
+from cusy.cms.testing import INTEGRATION_TESTING
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
@@ -17,7 +17,7 @@ except ImportError:
 class TestSetup(unittest.TestCase):
     """Test that cusy.cms is properly installed."""
 
-    layer = CUSY_CMS_INTEGRATION_TESTING
+    layer = INTEGRATION_TESTING
 
     def setUp(self):
         """Custom shared utility setup for tests."""

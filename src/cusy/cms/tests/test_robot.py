@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from cusy.cms.testing import CUSY_CMS_ACCEPTANCE_TESTING  # noqa: E501
+from cusy.cms.testing import ACCEPTANCE_TESTING  # noqa: E501
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
 
@@ -24,7 +24,7 @@ def test_suite():
             [
                 layered(
                     robottestsuite,
-                    layer=CUSY_CMS_ACCEPTANCE_TESTING,
+                    layer=ACCEPTANCE_TESTING,
                 ),
             ]
         )

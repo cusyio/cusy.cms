@@ -10,7 +10,7 @@
 #
 # 1) Start robot server:
 #
-# $ bin/robot-server --reload-path src cusy.cms.testing.CUSY_CMS_ACCEPTANCE_TESTING
+# $ bin/robot-server --reload-path src cusy.cms.testing.ACCEPTANCE_TESTING
 #
 # 2) Run robot tests:
 #
