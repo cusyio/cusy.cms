@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="cusy.cms">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="cusy.cms"
+      directory="profiles/default"
+      description="Installs the cusy.cms add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="cusy.cms (uninstall)"
+      directory="profiles/uninstall"
+      description="Uninstalls the cusy.cms add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.uninstall"
+      />
+
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="cusy.cms-hiddenprofiles"
+      />
+
+</configure>
