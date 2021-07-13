@@ -56,6 +56,11 @@ Dependencies
   RESTful hypermedia API for Plone.
 
 
+``cusy.cms`` also depends on the following add-ons, but does not install them by default:
+
+- `collective.lineage <https://github.com/collective/collective.lineage>`_:
+  Turns subfolders of a Plone site to appear as autonomous Plone sites.
+
 
 Installation
 ------------

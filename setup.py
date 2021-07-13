@@ -51,6 +51,7 @@ setup(
         "setuptools",
         "collective.behavior.banner",
         "collective.easyform",
+        "collective.lineage",
         "cusy.exportimport",
         "cusy.restapi.easyform",
         "cusy.restapi.info",
