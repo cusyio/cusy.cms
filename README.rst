@@ -35,6 +35,21 @@ The main policy package to install the Cusy CMS.
 Features
 --------
 
+Dependencies
+------------
+
+``cusy.cms`` depends on and installs the following add-ons:
+
+- `cusy.exportimport <https://github.com/cusyio/cusy.exportimport>`_:
+  Extensions and patches for collective.exportimport.
+- `cusy.restapi.easyform <https://github.com/cusyio/cusy.restapi.easyform>`_:
+  EasyForm integration for plone.restapi.
+- `cusy.restapi.info <https://github.com/cusyio/cusy.restapi.info>`_:
+  Site and content info for plone.restapi.
+- `cusy.restapi.patches <https://github.com/cusyio/cusy.restapi.patches>`_:
+  Patches and fixes for plone.restapi which are not yet released.
+
+
 
 Installation
 ------------

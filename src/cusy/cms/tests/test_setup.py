@@ -15,7 +15,7 @@ except ImportError:
 
 
 class TestSetup(unittest.TestCase):
-    """Test that cusy.cms is properly installed."""
+    """Validate that `cusy.cms` is properly installed."""
 
     layer = INTEGRATION_TESTING
 
@@ -28,20 +28,36 @@ class TestSetup(unittest.TestCase):
             self.installer = api.portal.get_tool("portal_quickinstaller")
 
     def test_product_installed(self):
-        """Test if cusy.cms is installed."""
+        """Validate that `cusy.cms` is installed."""
         self.assertTrue(self.installer.isProductInstalled("cusy.cms"))
 
     def test_browserlayer(self):
-        """Test that ICusyCmsLayer is registered."""
+        """Validate that the browser layer is registered."""
         from cusy.cms.interfaces import ICusyCmsLayer
         from plone.browserlayer import utils
 
         self.assertIn(ICusyCmsLayer, utils.registered_layers())
 
+    def test_cusy_exportimport_installed(self):
+        """Validate that `cusy.exportimport` is installed."""
+        self.assertTrue(self.installer.isProductInstalled("cusy.exportimport"))
+
+    def test_cusy_restapi_easyform_installed(self):
+        """Validate that `cusy.restapi.easyform` is installed."""
+        self.assertTrue(self.installer.isProductInstalled("cusy.restapi.easyform"))
+
+    def test_cusy_restapi_info_installed(self):
+        """Validate that `cusy.restapi.info` is installed."""
+        self.assertTrue(self.installer.isProductInstalled("cusy.restapi.info"))
+
+    def test_cusy_restapi_patches_installed(self):
+        """Validate that `cusy.restapi.patches` is installed."""
+        self.assertTrue(self.installer.isProductInstalled("cusy.restapi.patches"))
+
 
 class TestUninstall(unittest.TestCase):
 
-    layer = CUSY_CMS_INTEGRATION_TESTING
+    layer = INTEGRATION_TESTING
 
     def setUp(self):
         self.portal = self.layer["portal"]
@@ -55,11 +71,11 @@ class TestUninstall(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, roles_before)
 
     def test_product_uninstalled(self):
-        """Test if cusy.cms is cleanly uninstalled."""
+        """Validate that `cusy.cms` is cleanly uninstalled."""
         self.assertFalse(self.installer.isProductInstalled("cusy.cms"))
 
     def test_browserlayer_removed(self):
-        """Test that ICusyCmsLayer is removed."""
+        """Validate that the browser layer is removed."""
         from cusy.cms.interfaces import ICusyCmsLayer
         from plone.browserlayer import utils
 

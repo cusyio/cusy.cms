@@ -9,6 +9,7 @@
 .venv/
 bin/
 buildout-cache/
+checkouts/
 develop-eggs/
 eggs/
 htmlcov/

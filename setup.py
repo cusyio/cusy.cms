@@ -49,6 +49,10 @@ setup(
     python_requires=">=3.6",
     install_requires=[
         "setuptools",
+        "cusy.exportimport",
+        "cusy.restapi.easyform",
+        "cusy.restapi.info",
+        "cusy.restapi.patches",
     ],
     extras_require={
         "test": [

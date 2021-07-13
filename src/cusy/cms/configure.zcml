@@ -6,6 +6,11 @@
 
   <i18n:registerTranslations directory="locales" />
 
+  <include package="cusy.exportimport" />
+  <include package="cusy.restapi.easyform" />
+  <include package="cusy.restapi.info" />
+  <include package="cusy.restapi.patches" />
+
   <include file="permissions.zcml" />
   <include file="profiles.zcml" />
   <include package=".browser" />
