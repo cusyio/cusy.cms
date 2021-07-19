@@ -18,4 +18,6 @@
   <include file="profiles.zcml" />
   <include package=".browser" />
 
+  <include package=".packages" />
+
 </configure>

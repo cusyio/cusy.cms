@@ -53,9 +53,13 @@ setup(
         "collective.easyform",
         "collective.lineage",
         "cusy.exportimport",
+        "cusy.patches.cmfplone",
         "cusy.restapi.easyform",
         "cusy.restapi.info",
         "cusy.restapi.patches",
+        "lineage.controlpanels",
+        "lineage.registry",
+        "lineage.themeselection",
         "plone.restapi",
     ],
     extras_require={

@@ -3,27 +3,32 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="cusy.cms">
 
+  <include package="collective.lineage" />
+  <include package="lineage.controlpanels" />
+  <include package="lineage.registry" />
+  <include package="lineage.themeselection" />
+
   <genericsetup:registerProfile
       name="default"
-      title="Cusy CMS"
+      title="Cusy CMS: Subsites"
       directory="profiles/default"
-      description="Headless CMS based on Plone."
+      description="Subsite support for the Cusy CMS."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       post_handler=".setuphandlers.post_install"
       />
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="Cusy CMS (uninstall)"
+      title="Cusy CMS: Subsites (uninstall)"
       directory="profiles/uninstall"
-      description="Uninstall the Cusy CMS."
+      description="Uninstall cusy.cms.packages.subsites."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       post_handler=".setuphandlers.uninstall"
       />
 
   <utility
       factory=".setuphandlers.HiddenProfiles"
-      name="cusy.cms-hiddenprofiles"
+      name="cusy.cms.packages.subsites-hiddenprofiles"
       />
 
 </configure>
