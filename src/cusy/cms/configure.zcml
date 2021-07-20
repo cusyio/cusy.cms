@@ -20,4 +20,19 @@
 
   <include package=".packages" />
 
+  <!-- CORS policy for cusy.webpolicy.
+
+  Allows read-only access from all origins.
+  Allows post (to submit contact forms).
+  -->
+  <plone:CORSPolicy
+      allow_credentials="true"
+      allow_headers="Accept,Authorization,Origin,X-Requested-With,Content-Type,Upload-Length,Upload-Offset,Tus-Resumable,Upload-Metadata"
+      allow_methods="GET,OPTIONS,POST"
+      allow_origin="*"
+      expose_headers="Upload-Offset,Location,Upload-Length,Tus-Version,Tus-Resumable,Tus-Max-Size,Tus-Extension,Upload-Metadata"
+      layer="cusy.cms.interfaces.ICusyCmsLayer"
+      max_age="3600"
+      />
+
 </configure>
