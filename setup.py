@@ -61,6 +61,7 @@ setup(
         "lineage.registry",
         "lineage.themeselection",
         "plone.restapi",
+        "z3c.jbot",
     ],
     extras_require={
         "test": [
