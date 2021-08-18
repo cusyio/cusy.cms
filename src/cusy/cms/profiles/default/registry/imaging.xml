@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<registry>
+  <record name="plone.allowed_sizes">
+    <value purge="False">
+      <element>banner 1280:720</element>
+    </value>
+  </record>
+</registry>
