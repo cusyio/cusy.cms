@@ -48,11 +48,10 @@
                 tal:content="banner/banner_linktext">Link</a>
           </p>
 
-          <div class="bannerBody"
+          <div class="banner__text"
               tal:attributes="style string:color:${fontcolor}"
-              tal:condition="python:'banner_text' in banner">
-            <span tal:replace="structure banner/banner_text">Text</span>
-          </div>
+              tal:condition="python:'banner_text' in banner"
+              tal:content="structure banner/banner_text">Text</div>
         </div>
       </div>
     </div>
