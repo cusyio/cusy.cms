@@ -19,9 +19,10 @@
 
                 <div class="bannerImage"
                      tal:condition="python:has_image">
-                        <img class="bannerImageImage"
-                             tal:attributes="src string:${banner/banner_image}/${view/banner_scale};
-                                             alt banner/banner_alt">
+                        <img class="bannerImageImage" alt=""
+                            tal:define="banner_obj python: banner['banner_obj'];
+                                        scales banner_obj/@@images;"
+                            tal:replace="structure python:scales.tag('banner_image', scale=view.banner_scale(), css_class='bannerImageImage', alt=banner['banner_alt'], title=None)" />
                 </div>
 
                 <div class="bannerVideo"
