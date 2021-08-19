@@ -15,13 +15,12 @@
     <div class="container">
       <div class="banner__container"
           tal:attributes="class python:'banner__container' if has_image else 'banner__container banner__container--no-image'">
-        <div class="bannerImage"
-            tal:condition="python:has_image">
-          <img class="bannerImageImage" src="" alt=""
+        <picture class="banner__image-content" tal:condition="python:has_image">
+          <img class="banner__image" src="" alt=""
               tal:define="banner_obj python: banner['banner_obj'];
                           scales banner_obj/@@images;"
-              tal:replace="structure python:scales.tag('banner_image', scale=view.banner_scale(), css_class='bannerImageImage', alt=banner['banner_alt'], title=None)" />
-        </div>
+              tal:replace="structure python:scales.tag('banner_image', scale=view.banner_scale(), css_class='banner__image', alt=banner['banner_alt'], title=None)" />
+        </picture>
 
         <div class="bannerVideo"
             tal:condition="python:has_url and not has_image">
