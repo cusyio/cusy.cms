@@ -22,7 +22,10 @@ class TestImagingSettings(unittest.TestCase):
             "plone.allowed_sizes",
         )
         expected = [
-            "banner 1280:720",
+            "banner_xs 640:360",
+            "banner_sm 960:540",
+            "banner_md 1280:720",
+            "banner_lg 1600:900",
         ]
         for item in expected:
             self.assertIn(item, setting)

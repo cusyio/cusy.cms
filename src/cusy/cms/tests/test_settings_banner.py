@@ -21,4 +21,4 @@ class TestBannerSettings(unittest.TestCase):
         setting = plone.api.portal.get_registry_record(
             "collective.behavior.banner.browser.controlpanel.IBannerSettingsSchema.banner_scale",
         )
-        self.assertEqual(setting, "banner")
+        self.assertEqual(setting, "banner_md")

@@ -2,7 +2,10 @@
 <registry>
   <record name="plone.allowed_sizes">
     <value purge="False">
-      <element>banner 1280:720</element>
+      <element>banner_xs 640:360</element>
+      <element>banner_sm 960:540</element>
+      <element>banner_md 1280:720</element>
+      <element>banner_lg 1600:900</element>
     </value>
   </record>
 
@@ -14,6 +17,6 @@
   All other settings regarding collective.behavior.banner are placed in registry/banner.xml.
    -->
   <record name="collective.behavior.banner.browser.controlpanel.IBannerSettingsSchema.banner_scale">
-    <value>banner</value>
+    <value>banner_md</value>
   </record>
 </registry>
