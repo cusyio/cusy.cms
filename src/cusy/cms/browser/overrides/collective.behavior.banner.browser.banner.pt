@@ -2,7 +2,7 @@
     tal:define="banner view/find_banner|nothing"
     i18n:domain="collective.behavior.banner">
 
-  <aside id="portal-banner" class="banner" aria-label=""
+  <aside id="portal-banner" class="banner" aria-labelledby="portal-banner-title" aria-describedby="portal-banner-description"
       tal:condition="python: banner"
       tal:define="has_image python:banner and 'banner_image' in banner;
                   has_url python:banner and 'banner_url' in banner;
@@ -10,8 +10,7 @@
                   fontcolor python:has_fontcolor and banner['banner_fontcolor'] + ' !important' or '#4d4d4d';
                   has_backgroundcolor python:banner and 'banner_backgroundcolor' in banner;
                   backgroundcolor python:has_backgroundcolor and 'background:' + banner['banner_backgroundcolor'] + ' !important' or ''"
-      tal:attributes="style backgroundcolor;
-                      aria-label banner/banner_title | string:Banner">
+      tal:attributes="style backgroundcolor;">
     <div class="container">
       <div class="banner__container"
           tal:attributes="class python:'banner__container' if has_image else 'banner__container banner__container--no-image'">
@@ -30,12 +29,12 @@
         </div>
 
         <div class="banner__text-content">
-          <p class="banner__title"
+          <p class="banner__title" id="portal-banner-title"
               tal:attributes="style string:color:${fontcolor}"
               tal:condition="python:'banner_title' in banner"
               tal:content="banner/banner_title">Title</p>
 
-          <p class="banner__description"
+          <p class="banner__description" id="portal-banner-description"
               tal:attributes="style string:color:${fontcolor}"
               tal:condition="python:'banner_description' in banner"
               tal:content="banner/banner_description">Description</p>
