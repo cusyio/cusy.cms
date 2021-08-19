@@ -5,4 +5,15 @@
       <element>banner 1280:720</element>
     </value>
   </record>
+
+  <!-- Setting for collective.behavior.banner.
+
+  Needs to be placed here because of the dependency to the new scale defined in
+  plone.allowed_sizes above.
+
+  All other settings regarding collective.behavior.banner are placed in registry/banner.xml.
+   -->
+  <record name="collective.behavior.banner.browser.controlpanel.IBannerSettingsSchema.banner_scale">
+    <value>banner</value>
+  </record>
 </registry>

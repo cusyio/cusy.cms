@@ -1,6 +1,4 @@
 <?xml version="1.0"?>
 <registry>
-  <record name="collective.behavior.banner.browser.controlpanel.IBannerSettingsSchema.banner_scale">
-    <value>banner</value>
-  </record>
+  <!-- Please see registry/imaging.xml for the banner_scale setting. -->
 </registry>
