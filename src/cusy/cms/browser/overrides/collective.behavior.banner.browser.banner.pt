@@ -40,16 +40,13 @@
               tal:condition="python:'banner_description' in banner"
               tal:content="banner/banner_description">Description</p>
 
-          <div class="bannerLink"
-            tal:attributes="style string:color:${fontcolor}"
-            tal:condition="python: 'banner_link' in banner">
-
-            <p>
-              <a class="context" role="button" href="" title=""
-                  tal:attributes="href banner/banner_link; title banner/banner_linktext"
-                  tal:content="banner/banner_linktext">Link</a>
-            </p>
-          </div>
+          <p class="banner__link"
+              tal:attributes="style string:color:${fontcolor}"
+              tal:condition="python: 'banner_link' in banner">
+            <a class="context" href=""
+                tal:attributes="href banner/banner_link"
+                tal:content="banner/banner_linktext">Link</a>
+          </p>
 
           <div class="bannerBody"
               tal:attributes="style string:color:${fontcolor}"
