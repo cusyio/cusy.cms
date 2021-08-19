@@ -52,7 +52,7 @@
                          tal:attributes="style string:color:${fontcolor}"
                          tal:condition="python: 'banner_link' in banner">
 
-                            <p><a class="context" role="button" target="_blank" href="" title=""
+                            <p><a class="context" role="button" href="" title=""
                                   tal:attributes="href banner/banner_link; title banner/banner_linktext"
                                   tal:content="banner/banner_linktext">
                                 Link
