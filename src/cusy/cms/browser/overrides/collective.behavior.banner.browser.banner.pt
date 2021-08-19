@@ -14,10 +14,22 @@
     <div class="container">
       <div class="banner__container"
           tal:attributes="class python:'banner__container' if has_image else 'banner__container banner__container--no-image'">
-        <picture class="banner__image-content" tal:condition="python:has_image">
+        <picture class="banner__image-content"
+            tal:condition="python:has_image"
+            tal:define="banner_obj python: banner['banner_obj'];
+                        scales banner_obj/@@images;">
+          <tal:sources tal:repeat="scale python: ['banner_lg', 'banner_md', 'banner_sm', 'banner_xs']">
+            <source srcset="" media=""
+                tal:define="srcset python: scales.scale('banner_image', scale=scale);
+                            srcset_attribute python: srcset.srcset_attribute();
+                            src_url python: srcset_attribute or srcset.url;
+                            dimensions python: scales.available_sizes.get(scale);
+                            width python: dimensions and dimensions[0] or None;"
+                tal:condition="src_url"
+                tal:attributes="srcset src_url;
+                                media python: '(min-width: {0}px)'.format(width)">
+          </tal:sources>
           <img class="banner__image" src="" alt=""
-              tal:define="banner_obj python: banner['banner_obj'];
-                          scales banner_obj/@@images;"
               tal:replace="structure python:scales.tag('banner_image', scale=view.banner_scale(), css_class='banner__image', alt=banner['banner_alt'], title=None)" />
         </picture>
 
