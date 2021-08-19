@@ -1,0 +1,84 @@
+<tal:block
+    tal:define="banner view/find_banner|nothing"
+    i18n:domain="collective.behavior.banner">
+
+  <aside id="portal-banner" class="banner" aria-labelledby="portal-banner-title" aria-describedby="portal-banner-description"
+      tal:condition="python: banner"
+      tal:define="has_image python:banner and 'banner_image' in banner;
+                  has_url python:banner and 'banner_url' in banner;
+                  has_fontcolor python:banner and 'banner_fontcolor' in banner;
+                  fontcolor python:has_fontcolor and banner['banner_fontcolor'] + ' !important' or '#4d4d4d';
+                  has_backgroundcolor python:banner and 'banner_backgroundcolor' in banner;
+                  backgroundcolor python:has_backgroundcolor and 'background:' + banner['banner_backgroundcolor'] + ' !important' or ''"
+      tal:attributes="style backgroundcolor;">
+    <div class="container">
+      <div class="banner__container"
+          tal:attributes="class python:'banner__container' if has_image else 'banner__container banner__container--no-image'">
+        <picture class="banner__image-content"
+            tal:condition="python:has_image"
+            tal:define="banner_obj python: banner['banner_obj'];
+                        scales banner_obj/@@images;">
+          <tal:sources tal:repeat="scale python: ['banner_lg', 'banner_md', 'banner_sm', 'banner_xs']">
+            <source srcset="" media=""
+                tal:define="srcset python: scales.scale('banner_image', scale=scale);
+                            srcset_attribute python: srcset.srcset_attribute();
+                            src_url python: srcset_attribute or srcset.url;
+                            dimensions python: scales.available_sizes.get(scale);
+                            width python: dimensions and dimensions[0] or None;"
+                tal:condition="src_url"
+                tal:attributes="srcset src_url;
+                                media python: '(min-width: {0}px)'.format(width)">
+          </tal:sources>
+          <img class="banner__image" src="" alt=""
+              tal:replace="structure python:scales.tag('banner_image', scale=view.banner_scale(), css_class='banner__image', alt=banner['banner_alt'], title=None)" />
+        </picture>
+
+        <div class="banner__video-content"
+            tal:condition="python:has_url and not has_image">
+          <embed
+              tal:define="url banner/banner_url"
+              tal:replace="structure python:view.getVideoEmbedMarkup(url)">Embed code</embed>
+        </div>
+
+        <div class="banner__text-content">
+          <p class="banner__title" id="portal-banner-title"
+              tal:attributes="style string:color:${fontcolor}"
+              tal:condition="python:'banner_title' in banner"
+              tal:content="banner/banner_title">Title</p>
+
+          <p class="banner__description" id="portal-banner-description"
+              tal:attributes="style string:color:${fontcolor}"
+              tal:condition="python:'banner_description' in banner"
+              tal:content="banner/banner_description">Description</p>
+
+          <p class="banner__link"
+              tal:attributes="style string:color:${fontcolor}"
+              tal:condition="python: 'banner_link' in banner">
+            <a class="context" href=""
+                tal:attributes="href banner/banner_link"
+                tal:content="banner/banner_linktext">Link</a>
+          </p>
+
+          <div class="banner__text"
+              tal:attributes="style string:color:${fontcolor}"
+              tal:condition="python:'banner_text' in banner"
+              tal:content="structure banner/banner_text">Text</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <style>
+.banner__image {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.banner__title {
+  font-size: 3em;
+}
+  </style>
+</tal:block>
