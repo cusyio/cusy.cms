@@ -2,7 +2,7 @@
     tal:define="banner view/find_banner|nothing"
     i18n:domain="collective.behavior.banner">
 
-  <aside id="portal-banner" class="portal-banner" aria-label=""
+  <aside id="portal-banner" class="banner" aria-label=""
       tal:condition="python: banner"
       tal:define="has_image python:banner and 'banner_image' in banner;
                   has_url python:banner and 'banner_url' in banner;
