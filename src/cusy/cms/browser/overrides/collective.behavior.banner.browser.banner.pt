@@ -3,6 +3,7 @@
     i18n:domain="collective.behavior.banner">
 
   <aside id="portal-banner" class="portal-banner" aria-label=""
+      tal:condition="python: banner"
       tal:define="has_image python:banner and 'banner_image' in banner;
                   has_url python:banner and 'banner_url' in banner;
                   has_fontcolor python:banner and 'banner_fontcolor' in banner;
@@ -11,8 +12,7 @@
                   backgroundcolor python:has_backgroundcolor and 'background:' + banner['banner_backgroundcolor'] + ' !important' or ''"
       tal:attributes="style backgroundcolor;
                       aria-label banner/banner_title | string:Banner">
-    <div class="container"
-        tal:condition="python: banner">
+    <div class="container">
       <div class=""
           tal:attributes="class python:'banner_container portal-banner ' if has_image else 'banner_container banner_without_image portal-banner'">
         <div class="bannerImage"
