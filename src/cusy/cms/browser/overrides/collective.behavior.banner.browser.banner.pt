@@ -2,14 +2,15 @@
     tal:define="banner view/find_banner|nothing"
     i18n:domain="collective.behavior.banner">
 
-  <div id="portal-banner" class="portal-banner" role="complementary"
+  <aside id="portal-banner" class="portal-banner" aria-label=""
       tal:define="has_image python:banner and 'banner_image' in banner;
                   has_url python:banner and 'banner_url' in banner;
                   has_fontcolor python:banner and 'banner_fontcolor' in banner;
                   fontcolor python:has_fontcolor and banner['banner_fontcolor'] + ' !important' or '#4d4d4d';
                   has_backgroundcolor python:banner and 'banner_backgroundcolor' in banner;
                   backgroundcolor python:has_backgroundcolor and 'background:' + banner['banner_backgroundcolor'] + ' !important' or ''"
-      tal:attributes="style backgroundcolor">
+      tal:attributes="style backgroundcolor;
+                      aria-label banner/banner_title | string:Banner">
     <div class="container"
         tal:condition="python: banner">
       <div class=""
@@ -63,5 +64,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </aside>
 </tal:block>
