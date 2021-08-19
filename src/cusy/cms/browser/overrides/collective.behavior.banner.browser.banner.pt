@@ -22,11 +22,11 @@
               tal:replace="structure python:scales.tag('banner_image', scale=view.banner_scale(), css_class='banner__image', alt=banner['banner_alt'], title=None)" />
         </picture>
 
-        <div class="bannerVideo"
+        <div class="banner__video-content"
             tal:condition="python:has_url and not has_image">
-          <tal:iframe define="url banner/banner_url"
-              replace="structure python:view.getVideoEmbedMarkup(url)">
-          </tal:iframe>
+          <embed
+              tal:define="url banner/banner_url"
+              tal:replace="structure python:view.getVideoEmbedMarkup(url)">Embed code</embed>
         </div>
 
         <div class="bannerText">
