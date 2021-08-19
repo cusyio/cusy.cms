@@ -29,7 +29,7 @@
               tal:replace="structure python:view.getVideoEmbedMarkup(url)">Embed code</embed>
         </div>
 
-        <div class="bannerText">
+        <div class="banner__text-content">
           <h1 class="bannerTitle"
               tal:attributes="style string:color:${fontcolor}"
               tal:condition="python:'banner_title' in banner">
