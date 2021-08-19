@@ -21,11 +21,11 @@
           <tal:sources tal:repeat="scale python: ['banner_lg', 'banner_md', 'banner_sm', 'banner_xs']">
             <source srcset="" media=""
                 tal:define="srcset python: scales.scale('banner_image', scale=scale);
-                            srcset_attribute python: srcset.srcset_attribute();
-                            src_url python: srcset_attribute or srcset.url;
+                            srcset_attribute python: srcset and srcset.srcset_attribute() or None;
+                            src_url python: srcset_attribute or (srcset and srcset.url or '');
                             dimensions python: scales.available_sizes.get(scale);
                             width python: dimensions and dimensions[0] or None;"
-                tal:condition="src_url"
+                tal:condition="python: srcset and src_url"
                 tal:attributes="srcset src_url;
                                 media python: '(min-width: {0}px)'.format(width)">
           </tal:sources>
