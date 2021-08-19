@@ -55,4 +55,18 @@
       </div>
     </div>
   </aside>
+  <style>
+.banner__image {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.banner__title {
+  font-size: 3em;
+}
+  </style>
 </tal:block>
