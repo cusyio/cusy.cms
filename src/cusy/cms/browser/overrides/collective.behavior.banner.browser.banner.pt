@@ -30,11 +30,10 @@
         </div>
 
         <div class="banner__text-content">
-          <h1 class="bannerTitle"
+          <p class="banner__title"
               tal:attributes="style string:color:${fontcolor}"
-              tal:condition="python:'banner_title' in banner">
-            <span tal:replace="banner/banner_title">Title</span>
-          </h1>
+              tal:condition="python:'banner_title' in banner"
+              tal:content="banner/banner_title">Title</p>
 
           <p class="bannerDescription"
               tal:attributes="style string:color:${fontcolor}"
