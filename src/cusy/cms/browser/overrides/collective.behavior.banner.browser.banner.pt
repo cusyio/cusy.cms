@@ -20,7 +20,8 @@
         <picture class="banner__image-content"
             tal:condition="python:has_image"
             tal:define="banner_obj python: banner['banner_obj'];
-                        scales banner_obj/@@images;">
+                        scales banner_obj/@@images;
+                        banner_alt python: banner['banner_alt'] or ''">
           <tal:sources tal:repeat="scale python: ['banner_lg', 'banner_md', 'banner_sm', 'banner_xs']">
             <source srcset="" media=""
                 tal:define="srcset python: scales.scale('banner_image', scale=scale);
@@ -33,7 +34,7 @@
                                 media python: '(min-width: {0}px)'.format(width)">
           </tal:sources>
           <img class="banner__image" src="" alt=""
-              tal:replace="structure python:scales.tag('banner_image', scale=view.banner_scale(), css_class='banner__image', alt=banner['banner_alt'], title=None)" />
+              tal:replace="structure python:scales.tag('banner_image', scale=view.banner_scale(), css_class='banner__image', alt=banner_alt, title=None)" />
         </picture>
 
         <div class="banner__video-content"
