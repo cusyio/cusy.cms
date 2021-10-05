@@ -21,7 +21,7 @@
             tal:condition="python:has_image"
             tal:define="banner_obj python: banner['banner_obj'];
                         scales banner_obj/@@images;
-                        banner_alt python: banner['banner_alt'] or ''">
+                        banner_alt python: banner.get('banner_alt', '')">
           <tal:sources tal:repeat="scale python: ['banner_lg', 'banner_md', 'banner_sm', 'banner_xs']">
             <source srcset="" media=""
                 tal:define="srcset python: scales.scale('banner_image', scale=scale);
