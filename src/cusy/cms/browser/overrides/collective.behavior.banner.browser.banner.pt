@@ -2,6 +2,9 @@
     tal:define="banner view/find_banner|nothing"
     i18n:domain="collective.behavior.banner">
 
+  <link rel="stylesheet" type="text/css" href="++resource++cusy.cms/cusycms.css">
+  <script type="text/javascript" src="++resource++cusy.cms/cusycms.js"></script>
+
   <aside id="portal-banner" class="banner" aria-label="" aria-labelledby="" aria-describedby=""
       tal:condition="python: banner"
       tal:define="has_image python:banner and 'banner_image' in banner;
@@ -86,3 +89,4 @@
 }
   </style>
 </tal:block>
+

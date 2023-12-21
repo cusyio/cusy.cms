@@ -8,8 +8,19 @@
   <include package="z3c.jbot" file="meta.zcml" />
   <browser:jbot
       directory="overrides"
-      layer="cusy.cms.interfaces.ICusyCmsLayer"
       />
+
+<browser:resourceDirectory
+name="cusy.cms"
+directory="static"
+/>
+
+<browser:page
+for="*"
+name="foo"
+template="foo.pt"
+permission="zope2.View"
+/>
 
   <!-- Publish static files -->
   <plone:static
